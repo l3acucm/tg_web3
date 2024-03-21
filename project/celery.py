@@ -16,11 +16,11 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'listen_contract': {
         'task': 'project.smart_contracts_listener.tasks.write_new_events',
-        'schedule': 5
+        'schedule': 1
     },
     'publish_reports': {
         'task': 'project.smart_contracts_listener.tasks.build_and_publish_report',
-        'schedule': 20
+        'schedule': 4 * 60 * 60
     },
 }
 
